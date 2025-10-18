@@ -23,7 +23,7 @@ Outfit Description: ${outfitDescription}
 Generate a professional product photography style image of someone wearing this complete athletic outfit in a modern gym or urban fitness environment. The outfit should include all the described items. Use dramatic lighting with a sleek, premium aesthetic inspired by Adidas brand photography - bold, athletic, and sophisticated with black, white, and electric blue color scheme.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash-preview-image-generation",
+      model: "gemini-2.5-flash-image",
       contents: [{ role: "user", parts: [{ text: prompt }] }],
       config: {
         responseModalities: ["TEXT", "IMAGE"],
