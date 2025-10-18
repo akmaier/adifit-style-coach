@@ -3,7 +3,11 @@ import { GoogleGenAI } from "@google/genai";
 
 // Blueprint reference: javascript_gemini
 // Using Gemini for AI virtual try-on image generation
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+console.log("API key loaded:", !!process.env.GOOGLE_API_KEY);
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "",
+});
 
 export async function generateVirtualTryOn(
   userPhotoBase64: string,
